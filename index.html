@@ -1,0 +1,234 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Silpa P Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one left-aligned column; oversized name opens the page, a before/after report panel is the single illustrated moment. */
+:root {
+  --bg: #F2F6F8;
+  --surface: #FFFFFF;
+  --fg: #11202B;
+  --muted: #4B5E6B;
+  --line: #D3DEE4;
+  --accent: #0A7480;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #DDF0F2;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D161C; --surface: #14212A; --fg: #E5EEF2; --muted: #9BB0BC; --line: #26373F;
+    --accent: #52C5CF; --accent-ink: #072025; --accent-soft: #123038;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D161C; --surface: #14212A; --fg: #E5EEF2; --muted: #9BB0BC; --line: #26373F;
+  --accent: #52C5CF; --accent-ink: #072025; --accent-soft: #123038;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; line-height: 1.1; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: 0.95rem; }
+.top nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.top a { color: var(--fg); text-decoration: none; font-weight: 500; }
+.top a:hover { color: var(--accent); }
+
+.hero { display: flex; flex-direction: column; gap: 22px; }
+.hero h1 { font-size: clamp(3.4rem, 13vw, 7.5rem); font-weight: 800; letter-spacing: -0.045em; line-height: 0.95; }
+.hero .lead { font-size: clamp(1.1rem, 2.4vw, 1.35rem); max-width: 40rem; color: var(--fg); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; border: 2px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { color: var(--accent); background: transparent; }
+.btn:hover { filter: brightness(1.08); }
+
+section { display: flex; flex-direction: column; gap: 24px; }
+
+.project { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+.project .copy { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.stack { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.stack li { background: var(--accent-soft); color: var(--fg); padding: 3px 12px; border-radius: 999px; font-size: 0.9rem; font-weight: 500; }
+.points { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 8px; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.panel .cap { font-size: 0.85rem; color: var(--muted); }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 14px; font-size: 0.95rem; }
+.pair .head { font-size: 0.8rem; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.pair .head.b { color: var(--accent); }
+.pair .a { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.88rem; }
+.pair .b { font-weight: 600; }
+.pair .row-line { grid-column: 1 / -1; height: 1px; background: var(--line); }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px; }
+.skills div { min-width: 0; }
+.skills h3 { margin-bottom: 6px; }
+
+.rows { display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 4px 24px; padding: 16px 0; border-top: 1px solid var(--line); }
+.row:last-child { border-bottom: 1px solid var(--line); }
+.row .when { color: var(--muted); font-size: 0.95rem; }
+.row .what { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+
+.contact { display: flex; flex-direction: column; gap: 14px; }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.mail code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.05rem; background: var(--surface); border: 1px solid var(--line); padding: 8px 14px; border-radius: 8px; user-select: all; overflow-wrap: anywhere; }
+.copy-btn { font: inherit; font-weight: 600; cursor: pointer; background: transparent; color: var(--accent); border: 2px solid var(--accent); border-radius: 8px; padding: 7px 16px; }
+footer { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 720px) {
+  .project { grid-template-columns: minmax(0, 1fr); }
+  .row { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="muted">Pathanamthitta, Kerala</span>
+    <nav aria-label="Sections">
+      <a href="#project">Project</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Silpa P</h1>
+    <p class="lead">Computer Science and Engineering student at College of Engineering Aranmula, graduating in 2027. I build web applications in Python and Flask, and I am looking for a software engineering internship.</p>
+    <div class="actions">
+      <a class="btn primary" href="#project">See my project</a>
+      <a class="btn ghost" href="https://github.com/Silpa-cmyk">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/silpa-p-5109802b9">LinkedIn</a>
+    </div>
+  </div>
+
+  <section id="project">
+    <h2>Project</h2>
+    <div class="project">
+      <div class="copy">
+        <h3>MEDIREAD: Readable Medical Report and Scan Generator</h3>
+        <p>A full-stack web application that turns medical reports and scans into output a patient can read and understand.</p>
+        <ul class="stack" aria-label="Tech stack">
+          <li>Python</li><li>Flask</li><li>HTML</li><li>CSS</li><li>Bootstrap</li><li>SQLite</li>
+        </ul>
+        <ul class="points">
+          <li>Backend built with Python and Flask.</li>
+          <li>SQLite for data storage.</li>
+          <li>Responsive interface built with HTML, CSS and Bootstrap.</li>
+        </ul>
+        <p><a href="https://github.com/Silpa-cmyk">Browse my code on GitHub</a></p>
+      </div>
+      <div class="panel" role="group" aria-label="Illustration of plain-language conversion">
+        <div class="pair">
+          <div class="head">IN THE REPORT</div>
+          <div class="head b">IN PLAIN LANGUAGE</div>
+          <div class="a">Hypertension</div><div class="b">High blood pressure</div>
+          <div class="row-line"></div>
+          <div class="a">Tachycardia</div><div class="b">Fast heart rate</div>
+          <div class="row-line"></div>
+          <div class="a">Dyspnea</div><div class="b">Shortness of breath</div>
+        </div>
+        <p class="cap">Illustration of the idea behind MEDIREAD. Example terms only, not patient data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Languages</h3><p>Python, Java, C</p></div>
+      <div><h3>Web</h3><p>HTML, CSS, JavaScript, Flask, Bootstrap</p></div>
+      <div><h3>Databases</h3><p>SQL, MySQL, SQLite</p></div>
+      <div><h3>Computer science</h3><p>Data Structures and Algorithms, OOP, DBMS, Operating Systems, Computer Networks</p></div>
+      <div><h3>Tools</h3><p>Git, GitHub, VS Code</p></div>
+      <div><h3>Working style</h3><p>Problem solving, teamwork, communication, quick learner</p></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="rows">
+      <div class="row">
+        <div class="when">2023 to 2027</div>
+        <div class="what"><h3>B.Tech, Computer Science and Engineering</h3><p class="muted">College of Engineering Aranmula, Kerala. APJ Abdul Kalam Technological University (KTU).</p></div>
+      </div>
+      <div class="row">
+        <div class="when">2023</div>
+        <div class="what"><h3>Higher Secondary, 96%</h3><p class="muted">Kerala State Board</p></div>
+      </div>
+      <div class="row">
+        <div class="when">2021</div>
+        <div class="what"><h3>Secondary School Leaving Certificate, 98%</h3><p class="muted">Kerala State Board</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <h2>Leadership and volunteering</h2>
+    <div class="rows">
+      <div class="row">
+        <div class="when">College level</div>
+        <div class="what"><h3>Finance Manager and Volunteer, NSS</h3><p class="muted">National Service Scheme. Managed finances for the unit and took part in social service and community development programs.</p></div>
+      </div>
+      <div class="row">
+        <div class="when">IEDC</div>
+        <div class="what"><h3>IEDC Women Lead</h3><p class="muted">Innovation and Entrepreneurship Development Centre. Encouraged women students to join technical and entrepreneurial activities, and helped run workshops and awareness programs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>I speak, read and write English and Malayalam. For internship or project work, write to me at:</p>
+    <div class="mail">
+      <code id="mail-text">shilpappillai@gmail.com</code>
+      <button class="copy-btn" id="copy-btn" type="button">Copy email</button>
+    </div>
+    <div class="actions">
+      <a class="btn ghost" href="https://github.com/Silpa-cmyk">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/silpa-p-5109802b9">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>Silpa P, Pathanamthitta, Kerala, India</footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-btn');
+  var text = document.getElementById('mail-text');
+  function select() {
+    var r = document.createRange(); r.selectNodeContents(text);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 2000); };
+    try {
+      navigator.clipboard.writeText(text.textContent).then(done, function () { select(); btn.textContent = 'Press copy'; });
+    } catch (e) { select(); btn.textContent = 'Press copy'; }
+  });
+})();
+</script>
+
+</body></html>
